@@ -1,3 +1,5 @@
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+
 # The Digital Public Goods Alliance
 ![DPG Cover Photo](https://github.com/DPGAlliance/.github/blob/main/profile/logo.png)
 
