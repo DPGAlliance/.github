@@ -26,7 +26,7 @@ If there is a product that is open source AND good for the society? It probably 
 All the applications recieved by the DPGA secretariate are processed on [publicgood candidates public repo](https://github.com/DPGAlliance/publicgoods-candidates) and applicants can track progress of the applications on [GitHub](https://github.com/orgs/DPGAlliance/projects/1). 
 
 ### 3. Validate a DPG application 
-We want to open up the review process for the community to participate in. To that end, we have built a [validation tool](https://validate.digitalpublicgoods.net/) that crowdsources the vetting process. The tool was made by volunteers are we are seeking further help on development of this tool. If you are interested in contributing, [please holler](https://github.com/DPGAlliance/publicgoods-validate/issues) our team. 
+We want to open up the review process for the community to participate in. To that end, we have built a [validation tool](https://validate.digitalpublicgoods.net/) that crowdsources the vetting process. The tool was developed by volunteers and we are seeking further help on development of this tool. If you are interested in contributing, [please holler](https://github.com/DPGAlliance/publicgoods-validate/issues) our team. 
 
 
 ## Code of Conduct
