@@ -19,9 +19,9 @@ The DPG Standard is a baseline criteria for what a DPG must fulfill. The standar
 If you have any suggestions, please visit the [DPG Standard repo](https://github.com/DPGAlliance/DPG-Standard/) and [contribute](https://github.com/DPGAlliance/DPG-Standard/issues).
 
 ### 2. Nominate a Digital Public Good
-Is there a product that is open source AND good for society? It probably qualifies to be a DPG and should reside in the [DPG Registry]([https://digitalpublicgoods.net/registry/](https://app.digitalpublicgoods.net/signup)). You can nominate a digital solution that you know or have built yourself to be designated as a digital public good. 
+Is there a product that is open source AND good for society? It probably qualifies to be a DPG and should reside in the [DPG Registry]([https://digitalpublicgoods.net/registry/]). You can nominate a digital solution that you know or have built yourself to be designated as a digital public good. 
 
-**Not sure if the digital solution will qualify as DPG?** We have an [eligibility tool](https://digitalpublicgoods.net/eligibility/) that can help you gauge how ready you are to be a DPG. It only takes a few minutes. You can also [submit an application](https://submission.digitalpublicgoods.net/) to be a DPG. To find out more about the application process, go to our [submission guide](https://digitalpublicgoods.net/submission-guide/). 
+**Not sure if the digital solution will qualify as DPG?** We have an [eligibility tool](https://digitalpublicgoods.net/eligibility/) that can help you gauge how ready you are to be a DPG. It only takes a few minutes. You can also [submit an application]([https://submission.digitalpublicgoods.net/](https://app.digitalpublicgoods.net/signup)) to be a DPG. To find out more about the application process, go to our [submission guide](https://digitalpublicgoods.net/submission-guide/). 
 
 All the applications received by the DPGA Secretariat are processed on [publicgood candidates public repo](https://github.com/DPGAlliance/publicgoods-candidates), and applicants can track progress of their application on [GitHub](https://github.com/orgs/DPGAlliance/projects/1). 
 
