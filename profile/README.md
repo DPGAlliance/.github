@@ -1,37 +1,31 @@
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+<div align="center">
 
-# The Digital Public Goods Alliance
-![DPG Cover Photo](https://github.com/DPGAlliance/.github/blob/main/profile/logo.png)
+<a href="https://digitalpublicgoods.net" target="_blank" rel="noopener noreferrer"><img src="https://github.com/DPGAlliance/.github/blob/main/profile/logo.png" width="300" alt="Digital Public Goods Logo"></a>
 
-## Overview
+[![Contributor Covenant Badge][code-of-conduct-shield]](https://github.com/DPGAlliance/.github/blob/main/CODE_OF_CONDUCT.md) [![DPG Standard Badge](https://img.shields.io/badge/DPG-Standard-7c75f2?logo=github)](https://github.com/DPGAlliance/DPG-Standard) [![DPG Wiki Badge](https://img.shields.io/badge/DPG-Wiki-82dbe1?logo=github)](https://github.com/DPGAlliance/dpg-resources/wiki) [![DPG Community Badge](https://img.shields.io/badge/DPG-Community-3333ab?logo=github)](https://github.com/DPGAlliance/dpg-community)
 
-Welcome to the Digital Public Goods Alliance Github. We are a not-for-profit, multi-stakeholder alliance that stewards the [definition of 'digital public goods'](https://digitalpublicgoods.net/digital-public-goods/). Digital public goods (DPGs) are open-source products that advance the [sustainable development goals](https://sdgs.un.org/#goal_section). DPGs are open data, open AI models, open standards, and open content. Other than being open-source and platform independant, DPGs must adhere to privacy and other applicable laws and best practices, do no harm by design and meet the [DPG Standard](https://github.com/DPGAlliance/DPG-Standard). 
+Welcome to the Digital Public Goods Alliance's GitHub! We are a not-for-profit, UN-endorsed, multi-stakeholder initiative that accelerates the attainment of the sustainable development goals by facilitating the discovery, development, use of, and investment in [digital public goods](https://digitalpublicgoods.net/digital-public-goods). Digital public goods are **open-source software**, **open data**, **open AI systems**, and **open content collections** that adhere to privacy and other applicable best practices, do no harm, and are of high relevance for the attainment of the United Nations 2030 Sustainable Development Goals (SDGs).
 
-If you are curious to know about [how the DPGA functions](https://digitalpublicgoods.net/what-we-do/), visit our [website](https://digitalpublicgoods.net/).
+</div>
 
-## How do we function as an open project/organisation? 
-Various [partner](https://digitalpublicgoods.net/governance/) organisations of the DPGA have seconded technical and managerial resources to the DPG Secretariat. The secretariat works closely with the community (YOU!) and experts (YOU!) to maintain openness of the DPG Standard, reviews applications submitted by DPG nominees, and advocates for the [DPG Registry](https://digitalpublicgoods.net/registry/), a database of digital solutions that are designated DPGs. We offer a [public API](https://github.com/DPGAlliance/publicgoods-api) that can feed our database to other marketplaces, platforms, catalogues and registries e.g. [The Digital Impact Alliance Catalogue for DPGs](https://solutions.dial.community/).
+---
 
-## Get involved!
-### 1. Contribute to the DPG Standard
-The DPG Standard is a baseline criteria for what a DPG must fulfill. The standard has 9 indicators, which ensure the core design of the digital solution meets the criteria to become a DPG. It takes into account open licensing, privacy, relevance to the SDGs, and that the digital solution does no harm. It also lays down guidelines for documentation so that the DPG is replicable.
+Various [partner](https://digitalpublicgoods.net/governance/) organisations of the DPGA have seconded technical and managerial resources to the [DPGA Secretariat](https://digitalpublicgoods.net/digital-public-goods-alliance-secretariat/). The secretariat works closely with the community (YOU!) and experts (YOU!) to maintain the openness of the DPG Standard, review DPG applications, and advocate for the [DPG Registry](https://digitalpublicgoods.net/registry), a database of digital public goods. We also offer a [public API](https://github.com/DPGAlliance/publicgoods-api) that can feed our database to other marketplaces, platforms, catalogues, and registries. If you are curious to know more about how the DPGA functions, you should visit our [website](https://digitalpublicgoods.net/what-we-do).
 
-If you have any suggestions, please visit the [DPG Standard repo](https://github.com/DPGAlliance/DPG-Standard/) and [contribute](https://github.com/DPGAlliance/DPG-Standard/issues).
+## Get Involved!
 
-### 2. Nominate a Digital Public Good
-Is there a product that is open source AND good for society? It probably qualifies to be a DPG and should reside in the [DPG Registry](https://digitalpublicgoods.net/registry/). You can nominate a digital solution that you know or have built yourself to be designated as a digital public good. 
+| **Contribute to the DPG Standard** | **Nominate a Digital Public Good** |
+| - | - |
+| The [Digital Public Goods Standard](https://digitalpublicgoods.net/standard) is a set of specifications and guidelines designed to maximise consensus about whether a digital solution conforms to the definition of a digital public good. This standard, with nine (9) indicators is designed to complement other relevant principles and is applicable to DPGs in all sectors across the SDGs. If you have any suggestions, please visit the [DPG Standard repository](https://github.com/DPGAlliance/DPG-Standard) and [contribute](https://github.com/DPGAlliance/DPG-Standard/issues). | If your product is open source AND good for society, you should consider applying! You can learn more about DPGs [here](https://digitalpublicgoods.net/digital-public-goods), review the [eligibility requirements](https://digitalpublicgoods.net/submission-guide), or explore the registry of [existing DPGs](https://digitalpublicgoods.net/registry). You should also check out the [DPG Wiki](https://github.com/DPGAlliance/dpg-resources/wiki) for the application support documentation. |
 
-**Not sure if the digital solution will qualify as DPG?** We have an [eligibility tool](https://digitalpublicgoods.net/eligibility/) that can help you gauge how ready you are to be a DPG. It only takes a few minutes. You can also [submit an application]([https://submission.digitalpublicgoods.net/](https://app.digitalpublicgoods.net/signup)) to be a DPG. To find out more about the application process, go to our [submission guide](https://digitalpublicgoods.net/submission-guide/). 
+---
 
-All the applications received by the DPGA Secretariat are processed on [publicgood candidates public repo](https://github.com/DPGAlliance/publicgoods-candidates), and applicants can track progress of their application on [GitHub](https://github.com/orgs/DPGAlliance/projects/1). 
+<div align="center">
 
-### 3. Validate a DPG application 
-We want to open up the review process for the community to participate. To that end, we have built a [validation tool](https://validate.digitalpublicgoods.net/) that crowdsources the review process. The tool was developed by volunteers and we are seeking further help on development of this tool. If you are interested in contributing, [please contact](https://github.com/DPGAlliance/publicgoods-validate/issues) our team. 
+[![Subscribe to our Newsletter](https://img.shields.io/badge/Newsletter-3333ab?style=for-the-badge&logo=mailchimp&logoColor=white)](https://mailchi.mp/4ae88231c358/digital-public-goods-mailing-list)
+[![Follow us on X (Twitter)](https://img.shields.io/badge/X%20(Twitter)-3333ab?style=for-the-badge&logo=X&logoColor=white)](https://x.com/dpgalliance)
+[![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-3333ab?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/company/dpgalliance)
 
+</div>
 
-## Code of Conduct
-We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
-
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
-
-You will find our [Code of Conduct](https://github.com/DPGAlliance/DPG-Standard/blob/main/CODE_OF_CONDUCT.md) here.
+[code-of-conduct-shield]: https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg
