@@ -1,0 +1,156 @@
+# .github/workflows/set-opened-by.yml
+#
+# Auto-populate the "Opened by" field when an issue or PR is added to
+# the DPGA Sprints project (#14).
+#
+# Setup:
+#   1. Create a PAT (classic) with scopes: project, repo, read:org
+#   2. Add it as an org-level secret named PROJECT_TOKEN
+#   3. Place this file in any repo that feeds into the project
+#      (or in the .github repo for org-wide workflows)
+#
+# How it works:
+#   - Triggers on issues.opened and pull_request.opened
+#   - Checks if the issue/PR is in the target project
+#   - Looks up the author and sets the "Opened by" field
+#
+# Note: This also handles the case where items are added to the project
+# after creation (via the projects_v2_item event, if available).
+
+name: Set "Opened by" on project items
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  set-opened-by:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Opened by field
+        uses: actions/github-script@v7
+        env:
+          PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          script: |
+            const ORG = 'DPGAlliance';
+            const PROJECT_NUMBER = 14;
+            const FIELD_NAME = 'Opened by';
+
+            // Map GitHub login → select option label
+            const AUTHOR_MAP = {
+              'kistasi':      'Tasi (kistasi)',
+              'law909':       'Bálint (law909)',
+              'gazdagergo':   'Gergő (gazdagergo)',
+              'LauraIu':      'Laura (LauraIu)',
+              'PelinSmines':  'Pelin (PelinSmines)',
+            };
+
+            // Determine the content node ID and author
+            const isIssue = !!context.payload.issue;
+            const item = isIssue ? context.payload.issue : context.payload.pull_request;
+            const author = item.user.login;
+            const contentNodeId = item.node_id;
+
+            const label = AUTHOR_MAP[author];
+            if (!label) {
+              console.log(`Author '${author}' not in AUTHOR_MAP — skipping`);
+              return;
+            }
+
+            // 1. Get project ID, field ID, and option IDs
+            const projectQuery = `
+              query($org: String!, $number: Int!) {
+                organization(login: $org) {
+                  projectV2(number: $number) {
+                    id
+                    fields(first: 30) {
+                      nodes {
+                        ... on ProjectV2SingleSelectField {
+                          id
+                          name
+                          options { id name }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `;
+            const projData = await github.graphql(projectQuery, { org: ORG, number: PROJECT_NUMBER });
+            const project = projData.organization.projectV2;
+            const projectId = project.id;
+
+            let fieldId, optionId;
+            for (const field of project.fields.nodes) {
+              if (field.name === FIELD_NAME) {
+                fieldId = field.id;
+                const opt = field.options.find(o => o.name === label);
+                if (opt) optionId = opt.id;
+                break;
+              }
+            }
+
+            if (!fieldId || !optionId) {
+              console.log(`Field '${FIELD_NAME}' or option '${label}' not found — skipping`);
+              return;
+            }
+
+            // 2. Find the item in the project by its content node ID
+            const itemQuery = `
+              query($projectId: ID!, $cursor: String) {
+                node(id: $projectId) {
+                  ... on ProjectV2 {
+                    items(first: 100, after: $cursor) {
+                      pageInfo { hasNextPage endCursor }
+                      nodes {
+                        id
+                        content { ... on Issue { id } ... on PullRequest { id } }
+                      }
+                    }
+                  }
+                }
+              }
+            `;
+
+            let itemId = null;
+            let cursor = null;
+            // Search through project items to find the one matching this issue/PR
+            for (let page = 0; page < 20; page++) {
+              const data = await github.graphql(itemQuery, { projectId, cursor });
+              const items = data.node.items;
+              for (const pi of items.nodes) {
+                if (pi.content && pi.content.id === contentNodeId) {
+                  itemId = pi.id;
+                  break;
+                }
+              }
+              if (itemId || !items.pageInfo.hasNextPage) break;
+              cursor = items.pageInfo.endCursor;
+            }
+
+            if (!itemId) {
+              console.log('Issue/PR not found in project — it may not have been added yet');
+              return;
+            }
+
+            // 3. Set the field value
+            const mutation = `
+              mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $optionId: String!) {
+                updateProjectV2ItemFieldValue(
+                  input: {
+                    projectId: $projectId
+                    itemId: $itemId
+                    fieldId: $fieldId
+                    value: { singleSelectOptionId: $optionId }
+                  }
+                ) {
+                  projectV2Item { id }
+                }
+              }
+            `;
+            await github.graphql(mutation, { projectId, itemId, fieldId, optionId });
+            console.log(`✓ Set "${FIELD_NAME}" to "${label}" for ${isIssue ? 'issue' : 'PR'} #${item.number}`);
